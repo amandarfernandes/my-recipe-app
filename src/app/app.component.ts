@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  menuItem:string="recipes"
+
+  onMenuItemSelected(menuItem:string) {
+      console.log('menuItem',menuItem)
+      this.menuItem = menuItem;
+  }
 }
