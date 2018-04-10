@@ -1,13 +1,8 @@
-<app-header 
-  (menuItemSelected)="onMenuItemSelected($event)" >
-</app-header>
+<app-header></app-header>
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-      <app-shopping-list *ngIf="menuItem==='shopping'; else elseBlock"></app-shopping-list>
-      <ng-template #elseBlock><app-recipes ></app-recipes></ng-template>
+      <router-outlet></router-outlet>
   </div>
 </div>
 </div>
-
-

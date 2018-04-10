@@ -6,14 +6,16 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 @Injectable()
 export class RecipeService {
     private recipes:Recipe[]=[   
-        new Recipe('Toast',
+        new Recipe(
+        'Toast',
         'Well toasted bread with marmalade',
         'https://source.unsplash.com/9RGPG_ksS3Q',
         [
             new Ingredient('bread',2),
             new Ingredient('marmalade',1)
         ]),
-        new Recipe('Milkshake',
+        new Recipe(
+        'Milkshake',
         'A delicious milkshake to tickle your tastebuds',
         'https://source.unsplash.com/VnsBx4onRxQ',
         [
@@ -24,10 +26,16 @@ export class RecipeService {
         ]) 
       ];
 
-      recipeSelected = new EventEmitter<Recipe>();
+    recipeSelected = new EventEmitter<Recipe>();
+    
     constructor(private slService:ShoppingListService) {}
+    
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe(id:number) {
+        return {...this.recipes.slice()[id]};
     }
 
     addIngredients(ingredients:Ingredient[]) { 
