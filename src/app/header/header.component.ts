@@ -1,9 +1,7 @@
 import { Component, 
     OnInit, 
     Output, 
-    EventEmitter, 
-   // ViewChild, 
-  //  ElementRef 
+    EventEmitter 
   } from '@angular/core';
 
 @Component({
@@ -12,13 +10,9 @@ import { Component,
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() menuItemSelected= new EventEmitter<string>();
-  
+
   constructor() { }
 
   ngOnInit() {}
 
-  onSelectMenuItem(item:string) {
-    this.menuItemSelected.emit(item);
-  }
 }
