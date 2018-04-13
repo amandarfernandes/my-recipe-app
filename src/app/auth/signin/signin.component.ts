@@ -13,17 +13,11 @@ export class SigninComponent implements OnInit {
 
   constructor(private authService:AuthService) { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   onSignin(form:NgForm) {
     const {email, password} = form.value;
-    console.log(email,password)
-    //this.authService.signupUser(email,password);
     this.authService.signinUser(email,password);
   }
 
-
-  
 }

@@ -11,18 +11,19 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit, OnDestroy {
-  recipeDetail:Recipe;
-  id:number;
-  subscription:Subscription;
-  
-  constructor(private recipeService:RecipeService,
-    private route:ActivatedRoute,private router:Router) { }
+  recipeDetail: Recipe;
+  id: number;
+  subscription: Subscription;
+
+  constructor(private recipeService: RecipeService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.subscription = this.route.params
-    .subscribe((params:Params)=>{
+    .subscribe((params: Params) => {
        this.id = +params['id'];
-       this.recipeDetail=this.recipeService.getRecipe(this.id)
+       this.recipeDetail = this.recipeService.getRecipe(this.id);
     });
   }
 
