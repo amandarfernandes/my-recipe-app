@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - "7"
+  - stable
+
 sudo: true
 dist: trusty
 
@@ -9,5 +10,5 @@ branches:
     - master
     
 script:
-  - npm run build2
+  - npm run build
   - bash ./.travis-deploy.sh
