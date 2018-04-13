@@ -4,7 +4,6 @@ import { Component,
     EventEmitter
   } from '@angular/core';
 import { DataStorageService } from '../../shared/data-storage.service';
-import { Response } from '@angular/http';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
@@ -21,8 +20,8 @@ export class HeaderComponent implements OnInit {
 
   onSaveData() {
     this.dataService.storeRecipes()
-    .subscribe((response: Response) => {
-      console.log(response.json());
+    .subscribe((response) => {
+      console.log(response);
     });
   }
   onLogout() {
