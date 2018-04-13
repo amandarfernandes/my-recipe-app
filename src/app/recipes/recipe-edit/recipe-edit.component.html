@@ -52,7 +52,7 @@
               >Add</button>
               <div class="row" 
               style="margin-top:10px;"
-              *ngFor="let ingredientControl of recipeForm.get('ingredients').controls; let i = index" 
+              *ngFor="let ingredientControl of getControls(); let i = index;" 
               [formGroupName]="i">
                 <div class="col-xs-8">
                   <input type="text" class="form-control" formControlName="name">
